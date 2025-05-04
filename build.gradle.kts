@@ -1,15 +1,15 @@
 import io.papermc.paperweight.userdev.ReobfArtifactConfiguration
 import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
 
+group = "me.latifil.modernCombat"
+version = "0.1"
+description = "Turns modern pvp into pre-1.9 combat."
+
 plugins {
     `java-library`
     id("io.papermc.paperweight.userdev") version "2.0.0-beta.16"
     id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.2.0"
 }
-
-group = "me.latifil.modernCombat"
-version = "0.1"
-description = "Turns modern pvp into pre-1.9 combat."
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
