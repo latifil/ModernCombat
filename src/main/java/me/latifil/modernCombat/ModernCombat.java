@@ -1,5 +1,6 @@
 package me.latifil.modernCombat;
 
+import me.latifil.modernCombat.module.ModuleManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ModernCombat extends JavaPlugin {
@@ -9,6 +10,8 @@ public final class ModernCombat extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         instance = this;
+
+        ModuleManager moduleManager = new ModuleManager();
     }
 
     @Override
