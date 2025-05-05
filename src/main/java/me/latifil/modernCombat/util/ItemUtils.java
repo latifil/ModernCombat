@@ -15,8 +15,14 @@ public class ItemUtils {
             .animation(ItemUseAnimation.BLOCK)
             .build();
 
-    public static void addBlockingComponent(@NotNull ItemStack itemStack) {
-        if (itemStack.getComponents().has(DataComponents.CONSUMABLE)) return;
+    public static void addSwordBlockingComponent(@NotNull ItemStack itemStack) {
+        if (!itemStack.is(ItemTags.SWORDS)) {
+            return;
+        };
+
+        if (itemStack.getComponents().has(DataComponents.CONSUMABLE)) {
+            return;
+        };
 
         itemStack.applyComponents(
                 DataComponentPatch.builder()
@@ -25,7 +31,11 @@ public class ItemUtils {
         );
     }
 
-    public static void removeBlockingComponent(@NotNull ItemStack itemStack) {
+    public static void removeSwordBlockingComponent(@NotNull ItemStack itemStack) {
+        if (!itemStack.is(ItemTags.SWORDS)) {
+            return;
+        };
+
         itemStack.applyComponents(
                 DataComponentPatch.builder()
                         .remove(DataComponents.CONSUMABLE)

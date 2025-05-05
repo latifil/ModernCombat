@@ -25,7 +25,9 @@ public class SwordBlockingModule extends CombatModule {
 
     private static void updateAllItems(@NotNull Inventory inventory, boolean add) {
         for (@Nullable ItemStack bukkitStack : inventory.getContents()) {
-            if (bukkitStack == null || bukkitStack.getType().isAir()) continue;
+            if (bukkitStack == null || bukkitStack.getType().isAir()) {
+                continue;
+            };
 
             CraftItemStack craftItemStack;
             if (bukkitStack instanceof CraftItemStack) {
@@ -37,9 +39,9 @@ public class SwordBlockingModule extends CombatModule {
             net.minecraft.world.item.ItemStack nmsStack = craftItemStack.handle;
 
             if (add) {
-                ItemUtils.addBlockingComponent(nmsStack);
+                ItemUtils.addSwordBlockingComponent(nmsStack);
             } else {
-                ItemUtils.removeBlockingComponent(nmsStack);
+                ItemUtils.removeSwordBlockingComponent(nmsStack);
             }
         }
     }
@@ -55,7 +57,7 @@ public class SwordBlockingModule extends CombatModule {
                         ? (CraftItemStack) stack
                         : CraftItemStack.asCraftCopy(stack);
 
-                ItemUtils.addBlockingComponent(craftStack.handle);
+                ItemUtils.addSwordBlockingComponent(craftStack.handle);
                 player.getInventory().setItem(event.getSlot(), CraftItemStack.asBukkitCopy(craftStack.handle));
             }
         });

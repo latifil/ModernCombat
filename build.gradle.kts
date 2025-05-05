@@ -2,7 +2,7 @@ import io.papermc.paperweight.userdev.ReobfArtifactConfiguration
 import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
 
 group = "me.latifil.modernCombat"
-version = "0.2"
+version = "0.2.1"
 description = "Turns modern pvp into pre-1.9 combat."
 
 plugins {
